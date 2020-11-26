@@ -15,7 +15,7 @@ class linked_list:
     def __init__(self):
         self.head = None #Default value of the linked list head
         
-        
+    #Append a new element to the tail of the linked list  
     def append(self, new_val):
         new_node = node(new_val) #Create a new node with the corresponding value
         
@@ -75,7 +75,7 @@ class linked_list:
         
         return 
             
-        
+    #Display all elements of the linked list    
     def display_list (self):
         curr = self.head #Put the pointer on the head intially...
         
