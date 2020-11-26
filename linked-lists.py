@@ -4,12 +4,14 @@ Created on Thu Nov 26 08:33:03 2020
 @author: chaitanya
 """
 
+#Create a node class
 class node:
     
     def __init__(self,value):
         self.value = value
         self.next = None #Default value of the next node
-        
+
+#Create a linked list class
 class linked_list:
     
     def __init__(self):
