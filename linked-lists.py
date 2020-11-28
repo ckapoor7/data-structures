@@ -4,20 +4,20 @@ Created on Thu Nov 26 08:33:03 2020
 @author: chaitanya
 """
 
-#Create a node class
+import math
+
 class node:
     
     def __init__(self,value):
         self.value = value
         self.next = None #Default value of the next node
-
-#Create a linked list class
+        
 class linked_list:
     
     def __init__(self):
         self.head = None #Default value of the linked list head
         
-    #Append a new element to the tail of the linked list  
+        
     def append(self, new_val):
         new_node = node(new_val) #Create a new node with the corresponding value
         
@@ -53,6 +53,31 @@ class linked_list:
             new_node.next = curr.next
             curr.next = new_node
     
+    #Find the minimum element in the linked list 
+    def min_val(self):
+        
+        val = float(math.inf) #set minimum initially to a very large value
+        
+        while(self.head != None):
+            if (val > self.head.value):
+                val = self.head.value
+            self.head = self.head.next
+        
+        return val
+            
+    #Find the maximum element in the linked list
+    def max_val(self):
+        
+        val = float(-math.inf) #set maximum initially to a very large value
+        
+        while(self.head != None):
+            if (val < self.head.value):
+                val = self.head.value
+            self.head = self.head.next
+        
+        return val
+        
+    
     #Remove all occurences of a particular key in the linked list
     def remove(self,key):
         
@@ -77,7 +102,7 @@ class linked_list:
         
         return 
             
-    #Display all elements of the linked list    
+        
     def display_list (self):
         curr = self.head #Put the pointer on the head intially...
         
@@ -85,6 +110,3 @@ class linked_list:
             print(curr.value)
             curr = curr.next #Shift pointer to next node
 
-    
-        
-    
